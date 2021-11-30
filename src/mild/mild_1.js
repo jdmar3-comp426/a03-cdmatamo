@@ -90,15 +90,28 @@ export function countElement(array, value) {
 }
 export function countArray(array) {
     let keys = [];
-    for (let i = 0; i < keys.length; i++) {
-        keys[i] = array[i];
+    let flag = false;
+    for (let i = 0; i < array.length; i++) {
+        flag = false;
+        for (let j = 0; j < keys.length; j++) {
+            if (array[i] == keys[j]) {
+                flag = true;
+            }
+        }
+        if (flag == false) {
+            keys.push(array[i]);
+        }
+        
     }
-    let count = [];
-    const reduced = array.reduce((final,index)=> (final[index]=0,final),{}); // uses reduce to turn the values of the array into keys
+    let counting = [];
     array.forEach(element => {
-        count.push(countElement(array, element));
+       counting.push(countElement(array, element)); 
     });
-    reduced.map(reduced, count);
-    return reduced;
+    let final = {};
+    const reduced = array.reduce((final,index)=> (final[index]=0,final),{}); // uses reduce to turn the values of the array into keys
+    
+    const mapping = new map();
+    keys.forEach((key,i) => mapping[key] = counting[i]);
+    return mapping;
 }
  
