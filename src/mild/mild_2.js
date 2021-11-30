@@ -24,6 +24,16 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
+let values = [];
+array.forEach(element => {
+   values.push(element);
+})
+let id = {};
+let final = [];
+for (let i = 0; i < array.length; i++) {
+   final.push(id[typeof(array[i])] = values[i]);
+}
+return final;
 
 }
 

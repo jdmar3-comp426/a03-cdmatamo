@@ -57,7 +57,7 @@ export function sortArray(array) {
     let arr = [array.length];
 
     for(let k = 0; k < arr.length; k++) {
-        arr[k] = array[i];
+        arr[k] = array[k];
     }
 
     for (let i =0; i < array.length; i++) {
