@@ -104,7 +104,7 @@ export function countArray(array) {
         
     }
     let counting = [];
-    array.forEach(element => {
+    keys.forEach(element => {
        counting.push(countElement(array, element)); 
     });
     let final = {};

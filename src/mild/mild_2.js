@@ -6,7 +6,7 @@
  * returns: { type: 'number', value: 4 }
  */
 export function identifyVariable(variable) {
-   return {type: variable.prototype, value: variable};
+   return {type: typeof(variable), value: variable};
 }
 
 
@@ -44,7 +44,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-   
+
 }
 
 /**
