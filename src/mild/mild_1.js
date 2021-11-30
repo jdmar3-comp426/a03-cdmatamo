@@ -31,9 +31,9 @@ export function getIncreasingArray(startNumber, endNumber) {
     let increasing = [length];
     for (let i = 0; i < length; i++) {
         if ( i == 0) {
-            increasing[i] == startNumber;
+            increasing[i] = startNumber;
         } else if (i == length-1) {
-            increasing[i] == endNumber;
+            increasing[i] = endNumber;
         } else {
             increasing[i] = increasing[i - 1] + 1;
         }
