@@ -109,10 +109,10 @@ export function removeKeys(object, keyList) {
    let values = Object.values(object);
    let flag = false;
    for (let i = 0; i < keys.length; i++) {
-      flag = false;
+      flag = true;
       for (let j = 0; j < keyList.length; j++) {
          if (keys[i] == keyList[j]) {
-            flag = true;
+            flag = false;
          }
       }
       if (flag == true ) {
