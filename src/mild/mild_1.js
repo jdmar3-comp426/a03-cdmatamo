@@ -109,8 +109,8 @@ export function countArray(array) {
     });
     let final = {};
     //const reduced = array.reduce((final,index)=> (final[index]=0,final),{}); // uses reduce to turn the values of the array into keys
-    
-    return keys.forEach((key,i) => mapping[key] = counting[i]);
+    keys.forEach((key,i) => final[key] = counting[i]);
+    return final;
     
 }
  
