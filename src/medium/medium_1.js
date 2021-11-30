@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import {variance} from "./data/stats_helpers.js";
 
 /**
