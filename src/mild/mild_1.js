@@ -62,8 +62,8 @@ export function maxAndMin(numbers) {
         }
     }
     return {
-        max: max,
-        min: min
+        max: Math.max(max,min) ,
+        min: Math.min(max,min)
     } ;
 }
 
