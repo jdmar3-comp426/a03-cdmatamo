@@ -108,7 +108,13 @@ export function removeKeys(object, keyList) {
    let keys = Object.keys(object);
    let values = Object.values(object);
    for (let i = 0; i < keys.length; i++) {
-      if (keys[i] != key ) {
+      let flag = false;
+      for (let j = 0; j < keyList.length; j++) {
+         if (keys[i] == keyList[j]) {
+            flag = true;
+         }
+      }
+      if (flag == true ) {
          new_obj[keys[i]] = values[i];
       }
    }

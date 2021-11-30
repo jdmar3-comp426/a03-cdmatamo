@@ -114,6 +114,6 @@ export function getStatistics(array) {
 // mean ends here
     
 
-    return [len, sum, mean, median, min, max, vari, std];
+    return {length: len, sum: sum, mean: mean, median: median, min: min, max: max, variance: vari, standard_deviation: std};
 }
 
