@@ -9,7 +9,7 @@
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
 export function sumToString(a, b) {
-
+    return a + " + " + b + " = " + (a+b);
 }
 
 
@@ -24,6 +24,22 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
+    if (endNumber < startNumber) {
+        return null;
+    }
+    let length = endNumber + 1 - startNumber;
+    let increasing = [length];
+    for (let i = 0; i < length; i++) {
+        if ( i == 0) {
+            increasing[i] == startNumber;
+        } else if (i == length-1) {
+            increasing[i] == endNumber;
+        } else {
+            increasing[i] = increasing[i - 1] + 1;
+        }
+    }
+
+    return increasing;
 
 }
 
@@ -35,7 +51,17 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
-
+    let min = Number.MAX_SAFE_INTEGER;
+    let max = Number.MIN_SAFE_INTEGER;
+    for(let i = 0; i < numbers.length; i++) {
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
+        if (numbers[i] >= max) {
+            max = numbers[i];
+        }
+    }
+    return [min, max];
 }
 
 /**
@@ -49,5 +75,16 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-
+    let keys = [];
+    for (let i = 0; i < keys.length; i++) {
+        keys[i] = array[i];
+    }
+    let count = [];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < keys.length; j++) {
+            if (keys[j] == array[i] && count != 0) {
+                break;
+            }
+        }
+    }
 }
