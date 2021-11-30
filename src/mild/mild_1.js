@@ -61,7 +61,7 @@ export function maxAndMin(numbers) {
             max = numbers[i];
         }
     }
-    return [min, max];
+    return ['max: ' + max, 'min: ' + min];
 }
 
 /**
