@@ -61,7 +61,10 @@ export function maxAndMin(numbers) {
             max = numbers[i];
         }
     }
-    return [max, min];
+    return {
+        max: max,
+        min: min
+    } ;
 }
 
 /**
@@ -85,6 +88,7 @@ export function countArray(array) {
             if (keys[j] == array[i] && count != 0) {
                 break;
             }
+
         }
     }
 }
