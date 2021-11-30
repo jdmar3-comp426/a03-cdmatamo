@@ -77,18 +77,22 @@ export function maxAndMin(numbers) {
  * returns: {'2': 2, '3': 3, '6': 1, some: 2, hello: 1, '1,2': 1}
  *
  */
+
+export function countElement(array, value) {
+ let count = 0;
+ for (let i = 0; i < array.length; i++) {
+     if (array[i] == value) {
+         count++;
+     }
+ }
+ return count;
+
+}
 export function countArray(array) {
     let keys = [];
     for (let i = 0; i < keys.length; i++) {
         keys[i] = array[i];
     }
-    let count = [];
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < keys.length; j++) {
-            if (keys[j] == array[i] && count != 0) {
-                break;
-            }
-
-        }
-    }
+    const reduced = array.reduce((final,index)=> (final[index]=countElement(array, array[index]),final),{});
 }
+ 
