@@ -101,7 +101,7 @@ export function sortArray(array) {
 export function getStatistics(array) {
     let len = array.length;
     let sum = getSum(array);
-    let mean = 0;
+    let mean = 0.0;
     let sortedArr = sortArray(array);
     let min = Math.min(...array);
     let max = Math.max(...array);
