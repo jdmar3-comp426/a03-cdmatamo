@@ -26,6 +26,7 @@ return sum;
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
+    
     let temp = 0;
     for (let i =0; i < array.length; i++) {
         for (let j =1; j<array.length; j++) {
@@ -102,8 +103,8 @@ export function getStatistics(array) {
     let sum = getSum(array);
     let mean = 0;
     let sortedArr = sortArray(array);
-    let min = sortedArr[0];
-    let max = sortedArr[sortedArr.length-1];
+    let min = Math.min(...array);
+    let max = Math.max(...array);
     let median = getMedian(array);
     
 
