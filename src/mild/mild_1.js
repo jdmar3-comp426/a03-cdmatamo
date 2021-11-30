@@ -94,5 +94,6 @@ export function countArray(array) {
         keys[i] = array[i];
     }
     const reduced = array.reduce((final,index)=> (final[index]=countElement(array, array[index]),final),{});
+    return reduced;
 }
  
