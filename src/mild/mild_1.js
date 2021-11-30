@@ -93,7 +93,12 @@ export function countArray(array) {
     for (let i = 0; i < keys.length; i++) {
         keys[i] = array[i];
     }
-    const reduced = array.reduce((final,index)=> (final[index]=array.forEach(element => countElement(array, element)),final),{}); // uses reduce to turn the values of the array into keys
-    return reduced;
+    let count = [];
+    const reduced = array.reduce((final,index)=> (final[index]=0,final),{}); // uses reduce to turn the values of the array into keys
+    array.forEach(element => {
+        count.push(countElement(array, element));
+    });
+    const final = reduced.map(reduced, count);
+    return final;
 }
  
