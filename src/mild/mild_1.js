@@ -98,7 +98,7 @@ export function countArray(array) {
     array.forEach(element => {
         count.push(countElement(array, element));
     });
-    const final = reduced.map(reduced, count);
-    return final;
+    reduced.map(reduced, count);
+    return reduced;
 }
  
