@@ -97,8 +97,8 @@ export function getStatistics(array) {
     let sum = getSum(array);
     let mean = 0;
     let sortedArr = sortArray(array);
-    let min = sortedArr(0);
-    let max = sortedArr(sortedArr.length-1);
+    let min = sortedArr[0];
+    let max = sortedArr[sortedArr.length-1];
     let median = getMedian(array);
     let vari = variance(array);
     let std = Math.sqrt(vari);
