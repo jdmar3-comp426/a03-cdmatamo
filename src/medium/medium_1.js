@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 import {variance} from "./data/stats_helpers.js";
 
 /**
@@ -60,14 +61,19 @@ export function sortArray(array) {
         arr[k] = array[k];
     }
 
-    for (let i =0; i < array.length; i++) {
+    for (let i =0; i < array.length-1; i++) {
+        let min = array[i];
+        let minI = i;
         for (let j =i+1; j<array.length; j++) {
-            if (arr[i] > arr[j]) {
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j]=temp;
+            if(array[j]<min)
+            {
+                min = array[j];
+                minI = j;
             }
         }
+        let temp = array[i];
+        array[i] = min;
+        array[minI] = temp;
     }
     return arr;
  }
