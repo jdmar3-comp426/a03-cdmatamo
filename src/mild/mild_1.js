@@ -108,9 +108,8 @@ export function countArray(array) {
        counting.push(countElement(array, element)); 
     });
     let final = {};
-    const reduced = array.reduce((final,index)=> (final[index]=0,final),{}); // uses reduce to turn the values of the array into keys
+    //const reduced = array.reduce((final,index)=> (final[index]=0,final),{}); // uses reduce to turn the values of the array into keys
     
-    const mapping = new map();
     return keys.forEach((key,i) => mapping[key] = counting[i]);
     
 }
