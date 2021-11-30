@@ -100,8 +100,7 @@ export function getStatistics(array) {
     let min = sortedArr[0];
     let max = sortedArr[sortedArr.length-1];
     let median = getMedian(array);
-    let vari = variance(array);
-    let std = Math.sqrt(vari);
+    
 
 
 // calculates the mean in the following for loop
@@ -112,7 +111,8 @@ export function getStatistics(array) {
         }
     }
 // mean ends here
-    
+let vari = variance(array, mean);
+let std = Math.sqrt(vari);
 
     return {length: len, sum: sum, mean: mean, median: median, min: min, max: max, variance: vari, standard_deviation: std};
 }
