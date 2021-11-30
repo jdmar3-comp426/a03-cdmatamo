@@ -53,7 +53,9 @@ export function getMedian(array) {
 * 
 */
 export function sortArray(array) {
-    let arr = array.sort();
+    let arr = array.sort(function(a, b) {
+        return a - b;
+      });
     return arr;
  }
 
@@ -87,7 +89,7 @@ export function getStatistics(array) {
     let median = getMedian(array);
     
 
-
+console.log(sortedArr);
 // calculates the mean in the following for loop
     for(let i=0; i < len; i++) {
         mean+=array[i];
