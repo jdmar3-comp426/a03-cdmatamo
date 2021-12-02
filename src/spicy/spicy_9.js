@@ -125,13 +125,13 @@ export const everyEven = (arr, test) => {
  *    someEven([0, 0, 0, 0, 0], x => x === 0)  <--  returns true
  */
 export const someEven = (arr, test) => {
-    let flag = false;
+
     for (let i = 0; i < arr.length; i++) {
-        if (i % 2 == 0 && test) {
-            flag = true;
+        if (i % 2 == 0 && test(arr[i])) {
+            return true;
         }
     }
-    return flag;
+    return false;
 };
 
 
@@ -160,7 +160,7 @@ export const filter = (arr, test) => {
     let fail = [];
     let pass = [];
     for (let i = 0; i <  arr.length; i++) {
-        if (test) {
+        if (test(arr[i])) {
             pass.push(arr[i]);
         } else {
             fail.push(arr[i]);
@@ -200,7 +200,7 @@ export const anEvenIsOdd = (arr) => {
 export const hasExactly = (arr, test, n) => {
     let determinant = 0; 
     for (let  i = 0; i < arr.length; i++) {
-        if (test) {
+        if (test(arr[i])) {
             determinant++;
         }
     }
