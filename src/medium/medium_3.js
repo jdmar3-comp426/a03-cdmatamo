@@ -35,9 +35,9 @@ let highPower = [];
                 minI = j;
             }
         }
-        let temp = array[i];
-        array[i] = min;
-        array[minI] = temp;
+        let temp = highPower[i];
+        highPower[i] = min;
+        highPower[minI] = temp;
     }
     return highPower;
 }
