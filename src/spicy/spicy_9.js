@@ -28,7 +28,7 @@ return result;
  *   10 times.
  */
 export const repeatDemo = () => {
-    repeat(console.log(), 10, "Hello, world!");
+    repeat(Console.log(), 10, "Hello, world!");
 };
 
 
@@ -94,6 +94,13 @@ return tenTimes(50);
  *    everyEven([1, 1, 0, 1, 1], x => x === 1)  <--  returns false
  */
 export const everyEven = (arr, test) => {
+    let flag = true;
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 == 0 && !test) {
+            flag = false;
+        }
+    }
+    return flag;
 
 };
 
@@ -118,7 +125,13 @@ export const everyEven = (arr, test) => {
  *    someEven([0, 0, 0, 0, 0], x => x === 0)  <--  returns true
  */
 export const someEven = (arr, test) => {
-
+    let flag = false;
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 == 0 && test) {
+            flag = true;
+        }
+    }
+    return flag;
 };
 
 
@@ -144,7 +157,17 @@ export const someEven = (arr, test) => {
  *       -->  { pass: [1, 5, 31], fail: [90] }
  */
 export const filter = (arr, test) => {
+    let fail = [];
+    let pass = [];
+    for (let i = 0; i <  arr.length; i++) {
+        if (test) {
+            pass.push(arr[i]);
+        } else {
+            fail.push(arr[i]);
+        }
+    }
 
+    return {fail: fail, pass: pass};
 };
 
 
@@ -154,7 +177,7 @@ export const filter = (arr, test) => {
  *   odd numbers. Use the "everyEven" function in this function.
  */
 export const allEvensAreOdd = (arr) => {
-
+    return everyEven(arr, x=> x%2 == 1);
 };
 
 
@@ -164,7 +187,7 @@ export const allEvensAreOdd = (arr) => {
  *   array is an odd number. Use the "someEven" function in this function.
  */
 export const anEvenIsOdd = (arr) => {
-
+    return someEven(arr, x=> x%2 ==1 );
 };
 
 
@@ -175,5 +198,12 @@ export const anEvenIsOdd = (arr) => {
  *   pass the test. You must use the filter function.
  */
 export const hasExactly = (arr, test, n) => {
+    let determinant = 0; 
+    for (let  i = 0; i < arr.length; i++) {
+        if (test) {
+            determinant++;
+        }
+    }
 
+    return (determinant == n);
 };
