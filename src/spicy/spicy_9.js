@@ -27,8 +27,12 @@ return result;
  * Use the repeat function to log the string "Hello, world!" to the console
  *   10 times.
  */
+export const print = (s) => {
+    console.log(s);
+}
 export const repeatDemo = () => {
-    repeat(Console.log(), 10, "Hello, world!");
+
+    repeat(print, 10, "Hello, world!");
 };
 
 
@@ -94,13 +98,13 @@ return tenTimes(50);
  *    everyEven([1, 1, 0, 1, 1], x => x === 1)  <--  returns false
  */
 export const everyEven = (arr, test) => {
-    let flag = true;
+    
     for (let i = 0; i < arr.length; i++) {
-        if (i % 2 == 0 && !test) {
-            flag = false;
+        if (i % 2 == 0 && !test(arr[i])) {
+            return false;
         }
     }
-    return flag;
+    return true;
 
 };
 
@@ -167,7 +171,7 @@ export const filter = (arr, test) => {
         }
     }
 
-    return {fail: fail, pass: pass};
+    return {pass: pass, fail: fail};
 };
 
 
@@ -177,7 +181,7 @@ export const filter = (arr, test) => {
  *   odd numbers. Use the "everyEven" function in this function.
  */
 export const allEvensAreOdd = (arr) => {
-    return everyEven(arr, x=> x%2 == 1);
+    return everyEven(arr, x => x%2 == 1);
 };
 
 
